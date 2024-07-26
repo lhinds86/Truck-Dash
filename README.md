@@ -26,7 +26,7 @@ Truck Dash is a web app that Will help trucking companies keep track of their da
 </p>
 
 ## Entity Relationship Diagram (ERD)
-![TRUCK-DASH-ERD](./Truck-Dash(ERD).png)
+![TRUCK-DASH-ERD](./Planning/Truck-Dash(ERD).png)
 
 ## Wireframe
-![TRUCK-DASH-WIREFRAME](./wireframe.png)
+![TRUCK-DASH-WIREFRAME](./Planning/wireframe.png)
