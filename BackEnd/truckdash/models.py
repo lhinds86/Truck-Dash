@@ -79,3 +79,14 @@ class User(models.Model):
 
   def __str__(self):
     return self.username
+  
+class NewUser(models.Model):
+  firstname = models.CharField(max_length=150, unique=True)
+  lastname = models.CharField(max_length=150)
+  password = models.CharField(max_length=150)
+  lic = models.CharField(max_length=150)
+  state = models.CharField(max_length=150)
+  expire = models.IntegerField()  
+
+  def __str__(self):
+      return self.firstname

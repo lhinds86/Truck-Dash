@@ -1,0 +1,32 @@
+
+
+.sidebarContainer {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #2e2e2e; 
+  height: 100vh;
+}
+
+.subMenu {
+  background-color: #2e2e2e;
+  color: #b9cae1;
+  font-size: 1.5rem;
+}
+
+.menuItem {
+  background-color: #474747;
+  color: #3dabf9;
+  padding: 10px;
+}
+
+.menuItem:hover {
+  background-color: #FFF; 
+
+}
+
+.menuItem:active {
+  background-color: #FFF; 
+}

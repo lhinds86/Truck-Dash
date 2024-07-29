@@ -1,0 +1,16 @@
+
+body {
+  /* background-color: #151515; */
+  margin: 0;
+  z-index: -1;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 300px auto;
+  z-index: 9;
+}

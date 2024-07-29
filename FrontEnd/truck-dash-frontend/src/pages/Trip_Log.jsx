@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Drivers = () => {
+const Trip_Log = () => {
 
   return (
     <div>
@@ -10,4 +10,4 @@ const Drivers = () => {
   )
 }
 
-export default Drivers
+export default Trip_Log
