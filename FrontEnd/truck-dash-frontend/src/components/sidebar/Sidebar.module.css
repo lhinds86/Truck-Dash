@@ -1,19 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 
-.sidebarContainer {
-  display: flex;
-  height: 100vh;
-}
 
 .sidebar {
+  font-family: 'Roboto', sans-serif;
   background-color: #2e2e2e; 
   height: 100vh;
 }
 
 .subMenu {
   background-color: #2e2e2e;
-  color: #b9cae1;
-  font-size: 1.5rem;
+  color: #3b8dff;
+  font-size: 1.2rem;
 }
 
 .menuItem {
@@ -23,10 +21,10 @@
 }
 
 .menuItem:hover {
-  background-color: #FFF; 
+  background-color: #0053b8; 
 
 }
 
 .menuItem:active {
-  background-color: #FFF; 
+  background-color: #2e2e2e;; 
 }

@@ -1,8 +1,8 @@
-
+ 
 body {
   /* background-color: #151515; */
   margin: 0;
-  z-index: -1;
+  
 }
 .app {
   display: flex;
@@ -11,6 +11,6 @@ body {
 .title {
   display: flex;
   justify-content: center;
-  margin: 300px auto;
-  z-index: 9;
+  margin: 0 auto;
+  
 }

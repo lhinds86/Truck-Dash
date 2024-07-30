@@ -12,24 +12,8 @@ const SidebarMenu = () => {
 
   return (
    
-      <Sidebar
-        collapsed={collapsed}
-        toggled={toggled}
-        onBackdropClick={() => setToggled(false)}
-        onBreakPoint={setBroken}
-        breakPoint="md"
-        className={styles.sidebar}
-      >
-        <Menu
-          menuItemStyles={{
-            button: {
-              [`&.active`]: {
-                backgroundColor: '#13395e',
-                color: '#b6c8d9',
-              },
-            },
-          }}
-        >
+      <Sidebar className={styles.sidebar}>
+        <Menu>
           <SubMenu label='General' className={styles.subMenu}>
             <MenuItem component={<Link to="/" />} className={styles.menuItem}><FontAwesomeIcon icon={faHouse} /> Dashboard </MenuItem>
             <MenuItem component={<Link to="/settings" />} className={styles.menuItem}><FontAwesomeIcon icon={faGear} /> Settings </MenuItem>
