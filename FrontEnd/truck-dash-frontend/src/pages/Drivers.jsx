@@ -38,11 +38,11 @@ createTheme(
 const columns = [
 	{
 		name: 'First Name',
-		selector: row => row.fname,
+		selector: row => row.first_name,
 	},
 	{
 		name: 'Last Name',
-		selector: row => row.lname,
+		selector: row => row.last_name,
     sortable: true,
 	},
   {
@@ -67,45 +67,45 @@ const columns = [
 	},
 ]
 
-const data = [
-  {
-  id: 1,
-  fname: 'Mike',
-  lname: 'Harris',
-  lic: '09897543',
-  state: 'Alabama',
-  equipment: 'Box Truck',
-  total_miles: '6,230',  
-},
-{
-  id: 2,
-  fname: 'Kelly',
-  lname: 'Morris',
-  lic: '87399237',
-  state: 'Florida',
-  equipment: 'Box Truck',
-  total_miles: '8,767' 
-},
-{
-  id: 3,
-  fname: 'Greg',
-  lname: 'Forrest',
-  lic: '74839276',
-  state: 'New York',
-  equipment: 'Box Truck',
-  total_miles: '2,890', 
-},
-{
-  id: 4,
-  fname: 'David',
-  lname: 'Harrison',
-  lic: '29287678',
-  state: 'Georgia',
-  equipment: 'Box Truck',
-  total_miles: '5,187',
-}
-]
-const Drivers = () => {
+// const data = [
+//   {
+//   id: 1,
+//   fname: 'Mike',
+//   lname: 'Harris',
+//   lic: '09897543',
+//   state: 'Alabama',
+//   equipment: 'Box Truck',
+//   total_miles: '6,230',  
+// },
+// {
+//   id: 2,
+//   fname: 'Kelly',
+//   lname: 'Morris',
+//   lic: '87399237',
+//   state: 'Florida',
+//   equipment: 'Box Truck',
+//   total_miles: '8,767' 
+// },
+// {
+//   id: 3,
+//   fname: 'Greg',
+//   lname: 'Forrest',
+//   lic: '74839276',
+//   state: 'New York',
+//   equipment: 'Box Truck',
+//   total_miles: '2,890', 
+// },
+// {
+//   id: 4,
+//   fname: 'David',
+//   lname: 'Harrison',
+//   lic: '29287678',
+//   state: 'Georgia',
+//   equipment: 'Box Truck',
+//   total_miles: '5,187',
+// }
+// ]
+const Drivers = ({ data }) => {
 
   return (
       <Grid>

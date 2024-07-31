@@ -16,7 +16,7 @@ class TruckSerializer(serializers.ModelSerializer):
 class DriverSerializer(serializers.ModelSerializer):
   class Meta:
     model = Driver
-    fields = ['id', 'first_name', 'last_name', 'license_number', 'phone_number', 'email', 'status']
+    fields = ['id', 'first_name', 'last_name', 'lic', 'state', 'equipment', 'total_miles']
 
 class RouteSerializer(serializers.ModelSerializer):
   origin_location = LocationSerializer()

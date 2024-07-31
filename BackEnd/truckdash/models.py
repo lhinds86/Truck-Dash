@@ -25,7 +25,7 @@ class Truck(models.Model):
 class Driver(models.Model):
   first_name = models.CharField(max_length=50)
   last_name = models.CharField(max_length=50)
-  license_number = models.CharField(max_length=20, unique=True)
+  lic = models.CharField(max_length=20, unique=True)
   State = models.CharField(max_length=15)
   equipment = models.EmailField()
   total_miles = models.IntegerField()
