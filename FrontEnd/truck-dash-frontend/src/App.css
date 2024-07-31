@@ -1,6 +1,6 @@
  
 body {
-  /* background-color: #151515; */
+  background-color: #151515;
   margin: 0;
   
 }
@@ -8,9 +8,32 @@ body {
   display: flex;
   flex-direction: column;
 }
-.title {
+/* .title {
   display: flex;
   justify-content: center;
   margin: 0 auto;
   
+} */
+
+.dashboardContainer {
+  background: #474747;
+}
+.routeContainer {
+  margin: 80px 10px 10px 50px;
+  background: #474747;
+  border-radius: 10px;
+  box-shadow: 2px 1px 10px #3b8dff;
+}
+.driverContainer {
+  /* margin: 20px 10px 10px 20px; */
+  padding: 30px;
+  background: #474747;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 2px 1px 10px #3b8dff;
+}
+
+.calendarContainer {
+  margin: 60px 10px 10px 50px;
+  color: #3b8dff;
+  font-size: 4rem;
 }

@@ -26,12 +26,23 @@ class Driver(models.Model):
   first_name = models.CharField(max_length=50)
   last_name = models.CharField(max_length=50)
   license_number = models.CharField(max_length=20, unique=True)
-  phone_number = models.CharField(max_length=15)
-  email = models.EmailField()
-  status = models.CharField(max_length=20)
+  State = models.CharField(max_length=15)
+  equipment = models.EmailField()
+  total_miles = models.IntegerField()
 
   def __str__(self):
     return f"{self.first_name} {self.last_name}"
+  
+class NewDriver(models.Model):
+  firstname = models.CharField(max_length=150, unique=True)
+  lastname = models.CharField(max_length=150)
+  password = models.CharField(max_length=150)
+  lic = models.CharField(max_length=150)
+  state = models.CharField(max_length=150)
+  expire = models.IntegerField()  
+
+  def __str__(self):
+      return self.firstname
   
 class Route(models.Model):
   origin_location = models.ForeignKey(Location, related_name='route_origin', on_delete=models.CASCADE)
@@ -80,13 +91,3 @@ class User(models.Model):
   def __str__(self):
     return self.username
   
-class NewUser(models.Model):
-  firstname = models.CharField(max_length=150, unique=True)
-  lastname = models.CharField(max_length=150)
-  password = models.CharField(max_length=150)
-  lic = models.CharField(max_length=150)
-  state = models.CharField(max_length=150)
-  expire = models.IntegerField()  
-
-  def __str__(self):
-      return self.firstname
