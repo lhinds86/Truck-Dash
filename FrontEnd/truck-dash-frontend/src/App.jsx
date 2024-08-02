@@ -3,43 +3,47 @@ import { Link, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Dashboard from './pages/Dashboard';
 import Drivers from './pages/Drivers';
-import CreateDriver from './components/CreateDriver';
+import CreateDriver from './pages/CreateDriver';
 import Fuel_Log from './pages/Fuel_Log';
 import Maintenance from './pages/Maintenance';
 import Trucks from './pages/Trucks';
+import UpdateDriver from './pages/UpdateDriver';
+import DriverLog from './pages/DriverLog';
 
 function App() {
-  const [drivers, setDrivers] = useState([]);
+  // const [drivers, setDrivers] = useState([]);
 
-  useEffect(() => {
-    const getDrivers = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/api/drivers/');
-        setDrivers(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error('There was an error fetching the data!', error);
-      }
-    };
-    getDrivers();
-  }, []);
+  // useEffect(() => {
+  //   const getDrivers = async () => {
+  //     try {
+  //       const response = await axios.get('http://127.0.0.1:8000/api/drivers/');
+  //       setDrivers(response.data);
+  //       console.log(response.data);
+  //     } catch (error) {
+  //       console.error('There was an error fetching the data!', error);
+  //     }
+  //   };
+  //   getDrivers();
+  // }, []);
 
-  const driverList = Array.isArray(drivers) ? drivers : [];
+  // const driverList = Array.isArray(drivers) ? drivers : [];
 
   return (
     <>
-      <div className="Driverlist">
+      {/* <div className="Driverlist">
         {driverList.map(driver => (
           <Link key={driver.id} to={`/drivers/${driver.id}`}>
             <p className="driverlistname">{driver.name}</p>
           </Link>
         ))}
-      </div>
+      </div> */}
 
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/drivers" element={<Drivers data={drivers} />} />
-        <Route path="/create" element={<CreateDriver />} />
+        <Route path="/drivers" element={<Drivers />} />
+        <Route path="/create/" element={<CreateDriver />} />
+        <Route path="/drivers/:id" element={<DriverLog/>} />
+        <Route path="/drivers/:id/update" element={<UpdateDriver/>} />
         <Route path="/fuel_log" element={<Fuel_Log />} />
         <Route path="/maintenance" element={<Maintenance />} />
         <Route path="/trucks" element={<Trucks />} />

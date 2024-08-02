@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGear, faScrewdriverWrench, faHouse, faList, faTruck, faClipboardList, faAddressCard } from '@fortawesome/free-solid-svg-icons'
@@ -21,6 +21,8 @@ const SidebarMenu = () => {
 
           <SubMenu label='Drivers' className={styles.subMenu}>
             <MenuItem component={<Link to="/drivers" />} className={styles.menuItem}><FontAwesomeIcon icon={faList} /> Driver List </MenuItem>
+            {/* <MenuItem component={<Link to="/drivers/:id" />} className={styles.menuItem}><FontAwesomeIcon icon={faList} /> Driver Log </MenuItem>
+            <MenuItem component={<Link to="/drivers/${id}/update" />} className={styles.menuItem}><FontAwesomeIcon icon={faList} /> Driver update </MenuItem> */}
             <MenuItem component={<Link to="/triplog" />} className={styles.menuItem}><FontAwesomeIcon icon={faClipboardList} /> Trip Log </MenuItem>
             <MenuItem component={<Link to="/create" />} className={styles.menuItem}><FontAwesomeIcon icon={faAddressCard} /> New Driver </MenuItem>
           </SubMenu>
