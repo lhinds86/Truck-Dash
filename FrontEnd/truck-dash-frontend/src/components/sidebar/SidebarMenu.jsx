@@ -22,7 +22,7 @@ const SidebarMenu = () => {
           <SubMenu label='Drivers' className={styles.subMenu}>
             <MenuItem component={<Link to="/drivers" />} className={styles.menuItem}><FontAwesomeIcon icon={faList} /> Driver List </MenuItem>
             <MenuItem component={<Link to="/triplog" />} className={styles.menuItem}><FontAwesomeIcon icon={faClipboardList} /> Trip Log </MenuItem>
-            <MenuItem component={<Link to="/add-driver" />} className={styles.menuItem}><FontAwesomeIcon icon={faAddressCard} /> New Driver </MenuItem>
+            <MenuItem component={<Link to="/create" />} className={styles.menuItem}><FontAwesomeIcon icon={faAddressCard} /> New Driver </MenuItem>
           </SubMenu>
 
           <SubMenu label='Maintenance' className={styles.subMenu}>

@@ -4,6 +4,7 @@ import RoutesList from '../components/routeslist/RoutesList'
 import SidebarMenu from '../components/sidebar/SidebarMenu'
 import Topbar from '../components/topbar/Topbar'
 import DataTable, { createTheme } from 'react-data-table-component'
+import { Link } from 'react-router-dom'
 
 createTheme(
 	'solarized',
@@ -65,46 +66,10 @@ const columns = [
 		selector: row => row.total_miles,
     sortable: true,
 	},
+	
 ]
 
-// const data = [
-//   {
-//   id: 1,
-//   fname: 'Mike',
-//   lname: 'Harris',
-//   lic: '09897543',
-//   state: 'Alabama',
-//   equipment: 'Box Truck',
-//   total_miles: '6,230',  
-// },
-// {
-//   id: 2,
-//   fname: 'Kelly',
-//   lname: 'Morris',
-//   lic: '87399237',
-//   state: 'Florida',
-//   equipment: 'Box Truck',
-//   total_miles: '8,767' 
-// },
-// {
-//   id: 3,
-//   fname: 'Greg',
-//   lname: 'Forrest',
-//   lic: '74839276',
-//   state: 'New York',
-//   equipment: 'Box Truck',
-//   total_miles: '2,890', 
-// },
-// {
-//   id: 4,
-//   fname: 'David',
-//   lname: 'Harrison',
-//   lic: '29287678',
-//   state: 'Georgia',
-//   equipment: 'Box Truck',
-//   total_miles: '5,187',
-// }
-// ]
+
 const Drivers = ({ data }) => {
 
   return (
@@ -121,8 +86,10 @@ const Drivers = ({ data }) => {
             data={data}
             theme="solarized"
             selectableRows
+						highlightOnHover
           /> 
         </Grid.Item>
+				{/* <Link to="/create">Create Driver</Link> */}
       </Grid>
     </Grid>  
   )

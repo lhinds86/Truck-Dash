@@ -19,11 +19,11 @@ class TruckDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Truck.objects.all()
     serializer_class = TruckSerializer
 
-class DriverListCreateView(generics.ListCreateAPIView):
+class DriverList(generics.ListCreateAPIView):
     queryset = Driver.objects.all()
     serializer_class = DriverSerializer
 
-class DriverDetailView(generics.RetrieveUpdateDestroyAPIView):
+class DriverDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Driver.objects.all()
     serializer_class = DriverSerializer
 

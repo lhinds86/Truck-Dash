@@ -10,37 +10,18 @@ const Dashboard = () => {
 
   return (
     <Grid>
-       <Grid rows='auto'>
-         <Topbar />
-       </Grid>
-       <Grid columns='250px auto'>
-         <SidebarMenu />
-       </Grid>
-     </Grid>  
+        <Grid rows='auto'>
+        <Topbar />
+      </Grid>
+      <Grid columns='250px auto'>
+        <SidebarMenu />
+        <Grid.Item  className='driverContainer'>
+        <RoutesList />
+        </Grid.Item>
+      </Grid>
+    </Grid>  
   )
 }
 
 export default Dashboard
 
-
-    // <Grid>
-    //   <Grid rows='6em' columns='80em 2em' className='dashboardContainer'>
-    //     <Grid.Item className='routeContainer'>
-    //       <RoutesList />
-    //     </Grid.Item>
-        
-    //     <Grid.Item className='calendarContainer'>
-    //       <CalendarMini />
-    //     </Grid.Item>
-    //   </Grid>
-    // </Grid>  
-     
-    //   <Grid>
-    //   <Grid rows='auto'>
-    //     <Topbar />
-    //   </Grid>
-    //   <Grid columns='250px auto'>
-    //     <SidebarMenu />
-    //     <Dashboard />
-    //   </Grid>
-    // </Grid>  

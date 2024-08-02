@@ -13,7 +13,7 @@ class TruckSerializer(serializers.ModelSerializer):
     model = Truck
     fields = ['id', 'license_plate', 'make', 'model', 'year', 'status', 'current_location']
 
-class DriverSerializer(serializers.ModelSerializer):
+class DriverSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Driver
     fields = ['id', 'first_name', 'last_name', 'lic', 'state', 'equipment', 'total_miles']

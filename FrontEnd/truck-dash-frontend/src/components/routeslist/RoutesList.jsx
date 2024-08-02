@@ -1,6 +1,7 @@
 import React from 'react'
 import DataTable, { createTheme } from 'react-data-table-component'
 
+
 createTheme(
 	'solarized',
 	{
@@ -132,10 +133,12 @@ const data = [
 function RoutesList() {
 	return (
 		<DataTable 
+			title="Routes"
 			columns={columns}
 			data={data}
       theme="solarized"
 			selectableRows
+			highlightOnHover
 		/>
 	);
 }

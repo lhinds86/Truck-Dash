@@ -10,8 +10,7 @@ djangorestframework = "*"
 django-cors-headers = "*"
 
 [dev-packages]
-django = "*"
-psycopg2-binary = "*"
+
 
 [requires]
 python_version = "3.12"
