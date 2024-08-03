@@ -149,7 +149,6 @@ const Drivers = () => {
         </Grid.Item>
 				<Link to="/create">Create Driver</Link>
       </Grid>
-			
     </Grid>  
   )
 }
