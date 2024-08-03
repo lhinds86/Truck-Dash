@@ -5,7 +5,7 @@ import SidebarMenu from '../components/sidebar/SidebarMenu'
 import Topbar from '../components/topbar/Topbar'
 import DataTable, { createTheme } from 'react-data-table-component'
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from 'axios'
 
 createTheme(
@@ -37,77 +37,65 @@ createTheme(
 	},
 	'dark',
 )
-const handleEdit = (driver) => {
-	navigate(`/edit/${driver.id}`);
-};
-const columns = [
-	
-	{
-		name: 'First Name',
-		selector: row => row.first_name,
-	},
-	{
-		name: 'Last Name',
-		selector: row => row.last_name,
-    sortable: true,
-	},
-  {
-		name: 'Lic #',
-		selector: row => row.lic,
-    sortable: true,
-	},
-  {
-		name: 'state',
-		selector: row => row.state,
-    sortable: true,
-	},
-  {
-		name: 'Equipment',
-		selector: row => row.equipment,
-    sortable: true,
-	},
-  {
-		name: 'Total Miles',
-		selector: row => row.total_miles,
-    sortable: true,
-	},
-	{
-    cell: row => <button onClick={() => handleEdit(row)}>Edit</button>,
-    ignoreRowClick: true,
-    allowOverflow: true,
-    button: true,
-  },
-  {
-    cell: row => <button onClick={() => handleDelete(row.id)}>Delete</button>,
-    ignoreRowClick: true,
-    allowOverflow: true,
-    button: true,
-  },
-	
-]
+
+
 
 
 const Drivers = () => {
 
+	
+
 	const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+	const {id} = useParams()
 
-  useEffect(() => {
-    const getDrivers = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/api/drivers');
-        setData(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getDrivers();
-  }, []);
+	const columns = [
+		{
+			name: 'First Name',
+			selector: row => row.first_name,
+		},
+		{
+			name: 'Last Name',
+			selector: row => row.last_name,
+			sortable: true,
+		},
+		{
+			name: 'Lic #',
+			selector: row => row.lic,
+			sortable: true,
+		},
+		{
+			name: 'state',
+			selector: row => row.state,
+			sortable: true,
+		},
+		{
+			name: 'Equipment',
+			selector: row => row.equipment,
+			sortable: true,
+		},
+		{
+			name: 'Total Miles',
+			selector: row => row.total_miles,
+			sortable: true,
+		},
+		{
+			cell: row => <button onClick={() => handleEdit(row)}>Edit</button>,
+			ignoreRowClick: true,
+			allowOverflow: true,
+			button: true,
+		},
+		{
+			cell: row => <button onClick={() => handleDelete(row.id)}>Delete</button>,
+			ignoreRowClick: true,
+			allowOverflow: true,
+			button: true,
+		},
+		
+	]
 
-  const handleDelete = async (id) => {
+	const handleDelete = async (id) => {
     try {
       await axios.delete(`http://127.0.0.1:8000/api/drivers/${id}`);
       setData(data.filter(driver => driver.id !== id));
@@ -116,8 +104,27 @@ const Drivers = () => {
     }
   };
 
-  
+  const handleEdit = (driver) => {
+		navigate(`/drivers/${driver.id}/update`);
+    // navigate(`/drivers/:id/update/${driver.id}`);
+  };
 
+  useEffect(() => {
+    const getDrivers = async () => {
+      try {
+        const response = await axios.get(`http://127.0.0.1:8000/api/drivers/`)
+				if (response.status !== 200) {
+					throw new Error('Not Working')
+				}
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getDrivers();
+  }, [])
   if (loading) {
     return <div>Loading...</div>;
   }
